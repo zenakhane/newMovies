@@ -19,42 +19,31 @@
 <body>
    <div class="everything" x-data="movielist">
 <p>Register here</p>
-      <div class="row mb-3">
+     
+    <div class="register">
          <input type="text" x-model="userReg" class="form-control" placeholder="Username">
       </div>
 
-      <div class="row mb-3">
+      <div class="regpass">
          <input type="text" x-model="passReg" class="form-control" placeholder="password">
       </div>
 
       <button type="submit" @click="registerUser()" class="btn btn-primary">Submit</button>
 
+
+      <p>Log in here</p>
       <div class="user1">
-         <input type="text" class="form-control" placeholder="Username">
+         <input type="text" x-model="userLogin" class="form-control" placeholder="Username">
       </div>
       <div class="pass">
-         <input type="text" class="form-control" placeholder="password">
+         <input type="text" x-model="passLogin" class="form-control" placeholder="password">
       </div>
-     
+       
+      <button type="button" @click="getList()">Log in</button>
+
+
       <div>
-         <button type="button" @click="getList()">Get movies</button>
-         
          <template x-for=" movie in movieDisplay">
-            <!-- <div class="searchField">
-                  <input type="text" placeholder="Search.." name="search">
-                  <button type="button" class="btn btn-light">Search</button>
-               </div>
-               <div class="addMovie">
-                  <label for="">Movie name</label>
-                  <input type="text" name="movname" class="movname" >
-               </div>
-               <div class="field" >
-                  <label for="">Image</label>
-                  <input type="text" name="img" class="img"  >
-               </div>
-               <div>
-                  <button type="button" class="btn btn-info">Add movie</button>
-               </div> -->
             <div class="theworks">
                <h6 x-text="movie.title">
                </h6>
